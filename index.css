@@ -78,7 +78,7 @@ html, body {
 	height: 100%;
 }
 .container {
-	min-height: 100%;
+	min-height: 50%;
 	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer {
@@ -89,5 +89,10 @@ html, body {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+.body {
+	min-height: 05%;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
 
