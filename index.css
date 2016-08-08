@@ -92,7 +92,13 @@ html, body {
 }
 
 .body {
-	min-height: 05%;
+	min-height: 100px;
 	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
+
+button {
+	margin-left: 600px;
+	text-align: center;
+}
+
 
