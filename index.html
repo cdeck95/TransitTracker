@@ -2,43 +2,25 @@
 <!--
    Author: Chris Deck
    Application: Trax
-   Desciption: Application pulling data from 
-
-the MTA to distribute transit infromation for busses, trains, and NY subways.
+   Desciption: Application pulling data from the MTA to distribute transit infromation for busses, trains, and NY subways.
 -->
 <html>
 
 <head>
-    <meta 
-
-charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta 
-
-name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, 
-
-initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP 
-
-declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-
-
-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
   
 
-    
+    <link rel="stylesheet" type="text/css" href="index.css" />
+	
 
-<link rel="stylesheet" type="text/css" href="index.css" />
-	<link rel="stylesheet" 
-
-href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-	<script 
-
-src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script 
-
-src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     
 <title>Trax</title>
 
@@ -48,16 +30,23 @@ src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <body>
     
 	<div class="container">
-	
-		<img src="logo.png" alt="Sorry the image failed to load"></img>
-					
-
-<div>
 
 		<div class = "header">
-			<h1>Select type of transit</h1>
-
+						<menu>
+							<div class = "navBar">
+								<ul>
+  									<li id = "Home"><a href="default.asp">Home</a></li>
+   									<li id = "Contact"><a href="Contact.asp">Contact</a></li>
+   									<li id = "About"><a href="about.asp">About</a></li>
+									<li id = "Error"><a href="news.asp">Report an Error</a></li>
+								</ul>
+								<img src="logo.png" alt="Sorry the image failed to load"></img>
+	
+							</div>
+						</menu>   			
 		</div>
+
+		<div>
 		<table>
 			<tr>
 				<td>
@@ -82,17 +71,28 @@ src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 					</section>
 				</td>
 				<td>
-					<div class = "body">
-					</div>
-					<div id = buttonDiv>
-						<button id="searchButton">Search</button>
+					<div>
+					<table>
+						<tr>
+							<td class = "body">
+								<h1>Select type of transit</h1>
 
+   							</td>
+						</tr>
+						<tr>
+							<td>
+								<div id = buttonDiv>
+									<button id="searchButton">Search</button>
+
+								</div>
+							</td>
+						</tr>
+					</table>
 					</div>
+
 				</td>
-			</tr>		
+			</tr>
 		</table>
-		</div>
-
 		
 	</div>
 	
@@ -109,16 +109,11 @@ src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		</ul>
 	
 	</nav>
-    
+  
 <script type="text/javascript" src="cordova.js"></script>
 
 <script type="text/javascript" src="index.js"></script>
 
-<script type="text/javascript">
-
-        app.initialize();
-    
-</script>
 </body>
 
 </html>
