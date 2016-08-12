@@ -8,7 +8,8 @@ $( document ).on( "ready", function(){
 
 function runStuff() {	
 	
-	document.getElementById("searchButton").style.visibility = "hidden";
+	
+document.getElementById("searchButton").style.visibility = "hidden";
 	
 	$busView = false;
 
@@ -32,29 +33,18 @@ function runStuff() {
 
 				$(this).addClass("active");
 
-				$busView = true;
+				setViews(true, false, false);
 
-				$trainView = false;
 
-				$subwayView = false;
-
-				$('.body').append("<p>Enter Bus Destination Below</p>").css("margin", "0px 0px 0px 200px");
-			
-
-				$('.body').append('<input type="text" placeholder="Destination" name="destination" id="destination"/>');
-	
-
-				$('.body').append("<p>Enter Current Bus Station Below</p>");
+				$('.body').append("<p>Enter Bus Destination Below</p>").css("padding", "0px 0px 0px 200px");
+							$('.body').append('<input type="text" placeholder="Destination" name="destination" id="destination"/>');
+					$('.body').append("<p>Enter Current Bus Station Below</p>");
 
 			$('.body').append('<input type="text" placeholder="Current Station" name="currentStation" id="currentStation"/>');
+					document.getElementById("searchButton").style.visibility = "visible";
 	
-
-				document.getElementById("searchButton").style.visibility = "visible";
-	
-				$('.slideShow img').each(function() {
-					$(this).css('width', '800px');
-				});			
-					}
+				//restoreSlideShow();
+				}
 		
 			else{
 	
@@ -76,27 +66,15 @@ function runStuff() {
 
 				$(this).addClass("active");
 
-				$busView = false;
+				setViews(false, true, false);
 
-				$trainView = true;
-
-				$subwayView = false;
-
-				$('.body').append("<p>Enter Train Destination Below</p>").css("margin", "0px 0px 0px 200px");
-			
-
-				$('.body').append('<input type="text" placeholder="Destination" name="destination" id="destination"/>');
-	
-
-				$('.body').append("<p>Enter Current Train Station Below</p>");
+				$('.body').append("<p>Enter Train Destination Below</p>").css("padding", "0px 0px 0px 200px");
+							$('.body').append('<input type="text" placeholder="Destination" name="destination" id="destination"/>');
+					$('.body').append("<p>Enter Current Train Station Below</p>");
 
 			$('.body').append('<input type="text" placeholder="Current Station" name="currentStation" id="currentStation"/>');
-	
-
-				document.getElementById("searchButton").style.visibility = "visible";
-				$('.slideShow img').each(function() {
-					$(this).css('width', '800px');
-				});
+					document.getElementById("searchButton").style.visibility = "visible";
+				//restoreSlideShow();
 	
 			}
 					else {
@@ -120,25 +98,13 @@ function runStuff() {
 
 				$(this).addClass("active");
 				
-				$busView = false;
-
-				$trainView = false;
-				$subwayView = true;
-				
-				$('.body').append("<p>Enter Subway Destination Below</p>").css("margin", "0px 0px 0px 200px");
-			
-
-				$('.body').append('<input type="text" placeholder="Destination" name="destination" id="destination"/>');
-	
-
-				$('.body').append("<p>Enter Current Subway Station Below</p>");
+				setViews(false, false, true);				
+				$('.body').append("<p>Enter Subway Destination Below</p>").css("padding", "0px 0px 0px 200px");
+							$('.body').append('<input type="text" placeholder="Destination" name="destination" id="destination"/>');
+					$('.body').append("<p>Enter Current Subway Station Below</p>");
 			$('.body').append('<input type="text" placeholder="Current Station" name="currentStation" id="currentStation"/>');
-	
-
-				document.getElementById("searchButton").style.visibility = "visible";
-				$('.slideShow img').each(function() {
-					$(this).css('width', '800px');
-				});
+					document.getElementById("searchButton").style.visibility = "visible";
+				//restoreSlideShow();
 			}	
 			else{
 				
@@ -157,6 +123,34 @@ function runStuff() {
 	
 });
 
+
+$('#Home').click(function() {
+
+	setViews(false, false, false);
+	window.location = "index.html"
+	$(this).addClass("active");
+});
+
+$('#Contact').click(function() {
+
+	setViews(false, false, false);
+	window.location = "Contact.html"
+	$(this).addClass("active");
+});
+
+$('#About').click(function() {
+
+	setViews(false, false, false);
+	window.location = "About.html"
+	$(this).addClass("active");
+});
+
+$('#Error').click(function() {
+
+	setViews(false, false, false);
+	window.location = "Error.html"
+	$(this).addClass("active");
+});
 
 
 var currentIndex = 0;
@@ -184,6 +178,18 @@ var autoSlide = setInterval(function() {
 function clearContents() {
 	
 	$('.body').empty();
-	$('.header').empty();
-
 }
+
+
+function restoreSlideShow() {
+	$('.slideShow img').each(function() {
+		$(this).css('width', '800px');
+	});
+}
+
+function setViews(busView, trainView, subwayView) {
+	$busView = busView;
+	$trainView = trainView;
+	$subwayView = subwayView;
+}
+
